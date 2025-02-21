@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="radio" name="ms" value="married" onchange="change(event)"  >Married
+    <input type="radio" name="ms" value="unmarried" onchange="change(event)">Unmarried
+    <input type="radio" name="ms"   value="single" onchange="change(event)">single
+    <input type="radio" name="ms" value="minor" onchange="change(event)">Minor
+    <h1 id="d2"></h1>
+    <script>
+        function change(ev){
+            console.log(ev.target.value)
+        }
+    
+    </script>
+</body>
+</html>

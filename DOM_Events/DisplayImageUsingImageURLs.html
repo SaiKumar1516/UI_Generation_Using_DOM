@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: wheat;
+           
+        }
+        #container{
+            margin-left: 35%;
+            width: 400px;
+            height: 400px;
+           
+            color: red;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #imageContainer{
+            margin-top: 5px;
+            display: flex;
+            flex-direction: row;
+
+        }
+        #imageContainer img{
+            padding-left: 2px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Show images using URL</h1>
+        <form id="action">
+        <label>Enter image URL : </label>
+        <input type="text" name="" id="url">
+        <br><br>
+        <input type="submit" id="submit" value="Add Image">
+        <div id="imageContainer">
+
+        </div>
+    </form>
+    </div>
+    <script>
+        document.getElementById("action").addEventListener("submit",function(event){
+            event.preventDefault();
+
+            
+            var url=document.getElementById('url').value;
+
+            if(url){
+                var img=document.createElement("img");
+                img.src=url;
+                img.style.width = "100px";
+                img.style.height = "100px";
+                img.alt='user uploaded image';
+
+                document.getElementById("imageContainer").appendChild(img);
+            }
+            else{
+                alert("Please enter a valid image URL.");
+            }
+        })
+    </script>
+</body>
+</html>

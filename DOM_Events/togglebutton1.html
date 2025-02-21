@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button id="button" >On</button>
+
+    <script>
+       var x=document.getElementById("button");
+    x.style.width="60px"
+    x.style.height="60px"
+       x.addEventListener("click",function(){
+            if(x.textContent==="On")
+            {
+                x.innerText="Off"
+            }
+            else{
+                x.innerText="On"
+            }
+       })
+    </script>
+</body>
+</html>

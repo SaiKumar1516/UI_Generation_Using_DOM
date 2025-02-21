@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sideImagebar{
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+        }
+        #sideImagebar img{
+            margin: 10px;
+        }
+        #container{
+            display: flex;
+            flex-direction: row;
+
+        }
+        #showImage{
+            width: 300px;
+            height: 300px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sideImagebar">
+
+        </div>
+        <div id="showBox">
+            <img id="showImage" src="" alt="">
+        </div>
+    </div>
+    <script>
+        var images=["https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_640.jpg",
+            "https://cdn.pixabay.com/photo/2023/12/16/00/06/mountain-8451604_640.jpg",
+            "https://cdn.pixabay.com/photo/2023/02/01/10/37/sunset-7760143_640.jpg",
+            "https://cdn.pixabay.com/photo/2023/07/01/18/21/water-8100724_640.jpg"];
+            images.forEach(function(element){
+                var insertedImage=document.createElement("img");
+                insertedImage.src=element;
+                     insertedImage.onmouseover=function(event)
+                    {
+                      document.getElementById("showImage").src=event.target.src;
+                    }
+                document.getElementById("sideImagebar").appendChild(insertedImage)
+
+            })
+            document.getElementById("showImage").src=images[0];
+            
+           
+
+    </script>
+</body>
+</html>

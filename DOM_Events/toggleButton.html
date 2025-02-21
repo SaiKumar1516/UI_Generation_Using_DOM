@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color:palegoldenrod;
+            text-align: center;
+            color: red;
+        }
+        button{
+            background-color:sandybrown;
+            color: black;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1 id="d1" >Toggle button to show true/false</h1>
+    <button id="button" onclick="changeOption()">Toggle</button>
+        <span id="d2">true</span>
+
+    <script>
+        function changeOption(){
+            if(document.getElementById("d2").innerText==="true")
+            document.getElementById("d2").innerText="false";
+        else
+        document.getElementById("d2").innerText="true"
+        }
+    </script>
+</body>
+</html>

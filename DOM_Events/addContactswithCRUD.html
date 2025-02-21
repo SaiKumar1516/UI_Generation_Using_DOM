@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #main{
+            background-color: rgb(184, 225, 127);
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+                margin-left: 35%;
+        }
+        #submitButton{
+            background-color:rgb(219, 159, 80);
+            color: black;
+        }
+        #mainDetailsContainer{
+           
+           width: 250px;
+           height: 200px;
+       }
+       #detailsBox{
+           
+           align-items: center;
+           text-align: center;
+           padding-top: 10px;
+           width: 250px;
+           height: 250px;
+           border: 4px solid red;
+           background-color: rgb(251, 251, 135);
+           color: black;
+       }
+       #editBox{
+        background-color: royalblue;
+        color: white;
+        z-index: 0;
+        width: 60px;
+        border: none;
+        height: 20px;
+        font-size: 15px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        border-radius: 2px;
+       
+       }
+       #intoBox{
+        margin-left: 220px;
+        width: 10px;
+        height: 10px;
+        font-size: 20px;
+        color: red;
+        
+       }
+       #into{
+        cursor: pointer;
+       }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 id="heading">Add Contact Cards</h1>
+        <br>
+        <form action="" id="submission">
+            <label for="">Name : </label>
+            <input type="text" id="name" placeholder="Enter Name"><br><br>
+            <label for="">Number : </label>
+            <input type="text" name="" id="number"><br><br>
+            <label for="">Email : </label>
+            <input type="email" name="" id="email"><br><br>
+            <label for="">Enter image URL : </label>
+            <input type="text" name="" id="url"><br><br>
+            <input type="submit" id="submitButton" value="Add Contact">
+        </form>
+    </div>
+    <div  id="mainDetailsContainer">
+
+    </div>
+    
+<script>
+
+let isEditing = false;
+let currentEditBox = null;
+        //get the submit to create contact with events submission
+    document.getElementById("submission").addEventListener('submit',function(event){
+        event.preventDefault();
+
+        //get the details from input boxes and store them in an array.
+       var details=[document.getElementById("name").value,
+                     document.getElementById("number").value,
+                     document.getElementById("email").value,
+                     document.getElementById("url").value];
+
+                     // it uses this if you try to edit the existing card 
+
+                     if(isEditing)
+             {
+                var updatedDetails=[document.getElementById("name").value,
+                                 document.getElementById("number").value,
+                                 document.getElementById("email").value,
+                                 document.getElementById("url").value];
+
+
+            
+                                 //change the submission button to its original look or to back position
+                                 document.getElementById("submitButton").value='Add Contact'
+                                 document.getElementById("submitButton").style.backgroundColor="rgb(219, 159, 80)";
+                                 document.getElementById("submitButton").style.color='black';
+            
+                                 //sending updated details to current box or on edited box
+                                 currentEditBox.querySelector('img').src=updatedDetails[3];
+                                 currentEditBox.querySelectorAll('p')[0].innerText="Name : "+updatedDetails[0];
+                                 currentEditBox.querySelectorAll('p')[1].innerText="Number : "+updatedDetails[1];
+                                 currentEditBox.querySelectorAll('p')[2].innerText="Email : "+updatedDetails[2];
+            
+                                 //reset to past after edit has done
+                                 isEditing=false;
+                                 currentEditBox=null;
+             }
+             else{  
+                //create box for showing contact card
+        var box=document.createElement("div");
+        document.createElement("br");
+        box.setAttribute('id','detailsBox');
+
+        //create to remove box and into
+        var intobox=document.createElement("div");
+
+
+        var into=document.createElement("span");
+        into.setAttribute('id','into');
+        into.innerText="x";
+        intobox.setAttribute('id','intoBox');
+        intobox.appendChild(into);
+        box.appendChild(intobox);
+    
+
+        //create a image tag in contact card
+            var image=document.createElement("img");
+            image.src=details[3];
+            image.style.borderRadius="50%";
+            image.style.width="50px";
+            image.style.height="50px";
+
+            box.appendChild(image); 
+            
+            //create a p tag for name in contact card
+            var name=document.createElement("p");
+            name.innerText="Name : "+details[0];
+            box.appendChild(name)
+
+             //create a p tag for number in contact card
+            var number=document.createElement("p");
+            number.innerText="Number : "+details[1];
+            box.appendChild(number)
+
+             //create a p tag for email in contact card
+            var email=document.createElement("p");
+            email.innerText="Email : "+details[2];
+            box.appendChild(email);
+
+            //create a edit option in contact card
+            var edit=document.createElement("button");
+            edit.innerText='Edit';
+          edit.setAttribute('id','editBox')
+          edit.setAttribute('type','submit')
+            box.appendChild(edit);
+
+            mainDetailsContainer.appendChild(box);
+              
+            //edit option functionality i.e if you want to edit
+                   edit.onclick=function(){
+              //change editing status to true and focus on current editing contact card
+                      isEditing=true;
+                      currentEditBox=box;
+
+                      //create changes for add contact to save contact and appearance
+              
+              document.getElementById("submitButton").value='save changes';
+              document.getElementById("submitButton").style.backgroundColor="royalblue"
+              document.getElementById("submitButton").style.color='white';
+              
+
+              //show these details in the input boxes if we choose edit option 
+              document.getElementById("name").value=name.innerText.slice(7);
+              document.getElementById("number").value=number.innerText.slice(9);
+              document.getElementById("email").value=email.innerText.slice(8);
+               document.getElementById("url").value=image.src;
+              
+              };     
+
+              //create remove functionality
+
+               into.onclick=function(){
+                       box.remove();
+                        }
+                    }
+         });
+        
+               
+</script>
+</body>
+</html>

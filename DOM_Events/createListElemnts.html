@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+   
+    <script>
+         var students = [
+                                {
+                                name:'jaya',
+                                gender:'female',
+                                place:'gachibowli',
+                                },
+                                {
+                                name:'dasu',
+                                gender:'male',
+                                place:'kphb'
+                                },
+                                {
+                                name:'swati',
+                                gender:'female',
+                                place:'pune'
+                                },
+                                {
+                                name:'pallavi',
+                                gender:'female',
+                                place:'assam'
+                                },
+                                {
+                                name:'kiran',
+                                gender:'male',
+                                place:'kondapur'
+                                },
+                                {
+                                name:'thirumala',
+                                gender:'male',
+                                place:'madhapur'
+                                },
+                                {
+                                name:'priya',
+                                gender:'female',
+                                place:'hitech'
+                                },
+                            ]
+                            var mainDiv=document.createElement("div");
+                            mainDiv.style.border="5px solid red";
+                            mainDiv.style.width="96%"
+                            mainDiv.style.height="500px"
+                            document.body.appendChild(mainDiv)
+
+                            
+                
+                    
+                students.forEach(function(student){
+                    var subDiv=document.createElement("div");
+                    subDiv.style.width="98%";
+                    subDiv.style.backgroundColor="none";
+                    var mainList=document.createElement("ul");
+                    mainList.style.backgroundColor="lightblue" ;
+                  
+                    var listitem=document.createElement("li");
+                    listitem.innerText=student.name;
+                    var subList=document.createElement("ul");
+                    
+                    var sublistitm=document.createElement("li");
+
+                    sublistitm.innerText=student.gender;
+                    var sublistitm1=document.createElement("li");
+                    sublistitm1.innerText=student.place;
+
+                    subList.appendChild(sublistitm);
+                    subList.appendChild(sublistitm1);
+                    listitem.appendChild(subList); 
+                    mainList.appendChild(listitem); 
+                    subDiv.appendChild(mainList);
+                    mainDiv.appendChild(subDiv)
+                })
+                
+
+               
+    </script>
+</body>
+</html>

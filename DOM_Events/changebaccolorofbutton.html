@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        text-align: center;
+    }
+</style>
+<body>
+    <div>
+    <h1>Change button background color on click</h1>
+    <button id="d1" onclick="changeColor()" style="background-color: white;">White</button>
+</div>
+    <script>
+
+        function changeColor(){
+           var x= document.getElementById("d1");
+            if(x.style.backgroundColor==="white"){
+            document.getElementById("d1").innerText="green";
+            document.getElementById("d1").style.backgroundColor="green"
+            }
+            else{
+            
+            
+                document.getElementById("d1").style.backgroundColor="white";
+            document.getElementById("d1").innerText="white";
+            
+            
+            
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>

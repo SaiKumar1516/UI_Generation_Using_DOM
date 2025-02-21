@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            background-color: rgb(238, 215, 155);
+            color: red;
+        }
+        #like{
+            background-color: yellowgreen;
+            color: black;
+        }
+        
+        #disLike{
+            background-color: red;
+            color: white    ;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="d1">Like and Dislike Button</h1>
+        <button id="like" onclick="increaseLikeCount()">Like</button>
+           <span id="likeCount">&nbsp 0</span>
+        <br>
+        <br>
+        <button id="disLike" onclick="increaseDisLikeCount()">DisLike</button>
+            <span id="dislikeCount">&nbsp 0</span>
+    <script>
+        var like=document.getElementById("like");
+
+        var dislike=document.getElementById("disLike");
+        var i=0;
+        function increaseLikeCount(){
+            i++;
+            document.getElementById("likeCount").innerText=" "+i;
+        }
+        var j=0;
+        function increaseDisLikeCount(){
+            j++;
+            document.getElementById("dislikeCount").innerText=" "+j;
+        }
+
+
+    </script>
+</body>
+</html>

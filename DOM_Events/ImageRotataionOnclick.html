@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
+        #bikeContainer{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        #image{
+            width: 300px;
+            height:200px
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+    <h1>BIKES</h1>
+    <div id="bikeContainer">
+            <img id="image" src="" alt="" onclick="changeImage()">
+    </div>
+</div>
+    <script>
+        var images=["https://cdn.pixabay.com/photo/2015/08/27/09/06/bike-909690_640.jpg",
+            "https://cdn.pixabay.com/photo/2016/04/07/06/53/bmw-1313343_640.jpg",
+            "https://cdn.pixabay.com/photo/2016/03/27/17/59/motorcycle-1283299_640.jpg",
+            "https://cdn.pixabay.com/photo/2017/02/18/18/43/motorcycle-2077914_640.jpg"];
+            document.getElementById("image").src=images[0];
+        var i=1;
+            function changeImage(){
+                if(i<4){
+               document.getElementById("image").src=images[i]; i++;
+                }
+                else{
+                    document.getElementById("image").src=images[0];
+                    i=1;
+                }
+            }   
+        
+    </script>
+</body>
+</html>

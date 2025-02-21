@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x=document.createElement("h1");
+        x.innerText="hello world";
+        x.style="color:red"
+      document.body.appendChild(x)
+
+      var ar=['ramesh','suresh','praveen','gopi','sunil']
+
+      for(var i=0;i<ar.length;i++)
+      {
+      var l=document.createElement("li");
+      l.innerText=ar[i];
+     document.body.appendChild(l)
+    }
+
+    var a1=[11,12,13,14,15,16]
+    for(var j=0;j<a1.length;j++)
+    {
+        var list=document.createElement("li");
+        list.innerText=a1[j];
+        document.body.appendChild(list)
+    }
+
+    </script>
+</body>
+</html>

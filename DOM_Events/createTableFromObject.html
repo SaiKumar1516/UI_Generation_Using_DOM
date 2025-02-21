@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="d1"></div>
+
+    <script>
+        var obj=[
+            {
+                Name:'Praveen',
+                Age:'36',
+                Gender:'male',
+                Salary:'10000',
+                City:'hyd',
+            },
+            {
+                Name:'Srikanth',
+                Age:'32',
+                Gender:'male',
+                Salary:'20000',
+                City:'banglore',
+            },
+            {
+                Name:'Pradeep',
+                Age:'21',
+                Gender:'male',
+                Salary:'25000',
+                City:'hyd',
+            },
+            {
+                Name:'Mounika',
+                Age:'20',
+                Gender:'female',
+                Salary:'30000',
+                City:'nalgonda',
+            },
+            {
+                Name:'nikhil',
+                Age:'22',
+                Gender:'male',
+                Salary:'2000',
+                City:'guntur',
+            },
+            {
+                Name:'Riya',
+                Age:'12',
+                Gender:'female',
+                Salary:'40000',
+                City:'indore',
+            },
+        ]
+                
+           
+            
+
+            var table=document.createElement("table");
+
+            table.setAttribute('border', '1'); // Add a border for visibility
+    table.setAttribute('cellspacing', '0'); // Optional: Removes spacing between cells
+    table.setAttribute('cellpadding', '8');
+
+            var header=['Name','Age','Gender','Salary','City'];
+
+            var headerRow=document.createElement("tr");
+
+            header.forEach(function(headerText){
+                var th=document.createElement("th");
+                th.innerText=headerText;
+               headerRow.appendChild(th);
+            })
+            table.appendChild(headerRow);
+
+           
+            obj.forEach(function(employee){
+
+                var row=document.createElement("tr");
+
+                var nameCell=document.createElement("td");
+                nameCell.innerText=employee.Name;
+                row.appendChild(nameCell);
+
+                var ageCell=document.createElement("td");
+                ageCell.innerText=employee.Age;
+                row.appendChild(ageCell);
+
+                var genderCell=document.createElement("td")
+                genderCell.innerText=employee.Gender;
+                row.appendChild(genderCell);
+
+                var salaryCell=document.createElement("td")
+                salaryCell.innerText=employee.Salary;
+                row.appendChild(salaryCell);
+
+                var cityCell=document.createElement("td")
+                cityCell.innerText=employee.City;
+                row.appendChild(cityCell);
+
+                table.appendChild(row);
+            }
+        )
+
+       
+           document.getElementById("d1").appendChild(table);
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

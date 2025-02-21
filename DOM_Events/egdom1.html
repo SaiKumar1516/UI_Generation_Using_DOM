@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Hello World</h1> -->
+     <h1 classs="a">Hello</h1>
+     <h2 class="a">Edupoly</h2>
+     <!-- <p class="b">Training</p> -->
+
+     <ul>
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Orange</li>
+     </ul>
+
+     <h1>Hello</h1>
+<p>Edupoly</p>
+<p>Training</p>
+<p>Something</p>
+    <script>
+        var x=document.createElement("h1");
+        x.innerText="Hello World";
+        document.body.appendChild(x);
+        console.log(x.innerText);
+        console.log(typeof(x.innerText));
+        console.log(x.innerText.toUpperCase());
+        x.innerText="welcome to Edupoly"
+
+        // var y=document.createElement("h1");
+        // var z=document.createElement("h2")
+        // var k=document.createElement("p");
+        // y.innerText="Hello";
+        // document.body.appendChild(y);
+
+      var list=document.querySelectorAll("li");
+      var ar=[];
+      for(var i=0;i<list.length;i++)
+      {
+        ar[i]=list[i].innerText;
+      }
+        console.log(ar)
+        console.log(list)
+        var f=document.querySelector("p");
+        console.log(f.innerText)
+    </script>
+</body>
+</html>

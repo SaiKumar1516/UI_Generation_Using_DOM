@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       p{
+        display: none;
+       }
+    </style>
+</head>
+<body>
+    <div class="tut" >
+        <h1>Java</h1> 
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum impedit mollitia molestias suscipit dolorem dicta magnam eaque, quos vitae eos, neque voluptates quam quas quae culpa ut cum dolor odio? Doloribus eligendi totam dolorem ipsam molestias provident cum iste qui quo dignissimos.</p>
+    </div>
+    <div class="tut" >
+        <h1>ReactJs</h1>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, velit? Accusantium alias optio dolor natus aut earum suscipit. Porro, qui? rchitecto debitis, doloremque eveniet labore odio consectetur! Blanditiis est iure a, eveniet itaque repudiandae deleniti provident cupiditate, sapiente eos ut molestiae consequatur.</p>
+    </div>
+    <div  class="tut">
+        <h1>HTML</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, iure quia. Saepe minus, explicabo aspernatur, incidunt ratione architecto natus doloribus iste accusantium beatae, omnis iusto consequatur reprehenderit sed assumenda! Nostrum, pariatur recusandae. Cupiditate perferendis possimus harum nesciunt, quia officiis fuga quasi quidem culpa nihil, soluta quibusdam vel aperiam est cumque? Omnis, aperiam!</p>
+    </div>
+    <div class="tut">
+        <h1>Angular</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident aliquid maxime, cumque repudiandae velit eaque quasi aliquam corporis fugit iusto illum a odio blanditiis autem culpa, asperiores voluptatum suscipit? Repudiandae. nesciunt hic, delectus minus eligendi eveniet.</p>
+    </div>
+    <div>
+        <h1>CSS</h1>
+    </div>
+
+    <script>
+       document.querySelectorAll(".tut h1").forEach(function(tagElement){
+        tagElement.onclick=abc  ;
+
+       })
+      
+
+       function abc(ev){
+
+        document.querySelectorAll(".tut p").forEach(function(el){
+            el.style.display="none"
+       })
+        ev.target.nextElementSibling.style.display="block";
+
+       }
+    </script>
+</body>
+</html>

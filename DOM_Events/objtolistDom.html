@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var students = [		
+                                    {
+                                        "firstname": "praveen",
+                                        "age": 36,
+                                        "subjects":['angular','nodejs','reactjs','java']
+                                    }, 
+                                    {
+                                        "firstname": "srikanth",
+                                        "age": 32,
+                                        "subjects":['react','mongodb']
+                                    }, 
+                                    {
+                                        "firstname": "pradeep",
+                                        "age": 21,
+                                        "subjects":['express','mongoose','python']
+                                    }
+                            ]
+                            var mainList=document.createElement("ol");
+                        students.forEach(function(element){
+                            
+                                var mainListItems=document.createElement("li");
+                                mainListItems.innerText=element.firstname;
+
+                                var subList=document.createElement("ol");
+                                for(var i=0;i<=element.subjects.length-1;i++)
+                                {
+                                    var subListItems=document.createElement("li");
+                                    subListItems.innerText=element.subjects[i];
+                                    subList.appendChild(subListItems);
+                                    
+                                }
+                                mainListItems.appendChild(subList);
+                              
+                               mainList.appendChild(mainListItems);
+                             
+                                
+                        })
+                        document.body.appendChild(mainList);
+                           
+
+    </script>
+</body>
+</html>

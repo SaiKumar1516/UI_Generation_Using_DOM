@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: wheat;
+    }
+    #mainContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        color:darkred;
+    }
+</style>
+<body>
+    <div id="mainContainer">
+        <h1>ADD STUDENTS</h1>
+        
+        <form id="submission">
+           <input type="text" id="details" >
+           <input type="submit" value="Add Student">
+        </form>
+        <br>
+        <div id="detailsContainer">
+
+        </div>
+    </div>
+    <script>
+            document.getElementById("submission").addEventListener('submit',function(event){
+                event.preventDefault();
+
+                var studentName=document.getElementById('details').value;
+                if(studentName)
+            {
+                var name=document.createElement("li");
+                name.innerText=studentName;
+                name.style.color='darkred';
+             
+
+                    document.getElementById("detailsContainer").appendChild(name);
+
+            }
+            else{
+                alert("enter a name")
+            }
+                
+
+
+            })
+    </script>
+</body>
+</html>

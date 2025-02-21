@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main{
+            background-color: rgb(184, 225, 127);
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+                margin-left: 35%;
+        }
+        #submitButton{
+            background-color:rgb(219, 159, 80);
+            color: black;
+        }
+        #mainDetailsContainer{
+           
+            width: 250px;
+            height: 200px;
+        }
+        #detailsBox{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 250px;
+            height: 200px;
+            border: 2px solid red;
+            background-color: rgb(251, 251, 135);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+    <h1 id="heading">Add Contact Cards</h1>
+    <br>
+    <form action="" id="submission">
+        <label for="">Name : </label>
+        <input type="text" id="name" placeholder="Enter Name"><br><br>
+        <label for="">Number : </label>
+        <input type="number" name="" id="number"><br><br>
+        <label for="">Email : </label>
+        <input type="email" name="" id="email"><br><br>
+        <label for="">Enter image URL : </label>
+        <input type="text" name="" id="url"><br><br>
+        <input type="submit" id="submitButton" value="Add Contact">
+    </form>
+</div>
+<div id="mainDetailsContainer">
+
+</div>
+
+<script>
+    document.getElementById("submission").addEventListener('submit',function(event){
+        event.preventDefault();
+       var details=[document.getElementById("name").value,
+                     document.getElementById("number").value,
+                     document.getElementById("email").value,
+                     document.getElementById("url").value];
+        var box=document.createElement("div");
+        document.createElement("br");
+        box.setAttribute('id','detailsBox');
+    
+            var image=document.createElement("img");
+            image.src=details[3];
+            image.style.borderRadius="50%";
+            image.style.width="50px";
+            image.style.height="50px";
+
+            box.appendChild(image); 
+            
+            var name=document.createElement("p");
+            name.innerText="Name : "+details[0];
+            box.appendChild(name)
+
+            var number=document.createElement("p");
+            number.innerText="Number : "+details[1];
+            box.appendChild(number)
+
+            var email=document.createElement("p");
+            email.innerText="Email : "+details[2];
+            box.appendChild(email);
+
+            mainDetailsContainer.appendChild(box);
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" name="tech" value="css" onchange="handletech(event)">css
+    <input type="checkbox" name="tech" value="rjs" onchange="handletech(event)">ReactJS
+    <input type="checkbox" name="tech" value="ang" onchange="handletech(event)">Angular
+    <input type="checkbox" name="tech" value="html" onchange="handletech(event)">html
+    <input type="checkbox" name="tech" value="js" onchange="handletech(event)">javascript
+
+    <script>
+        var selectedTechs=[];
+        function handletech(ev){
+            if(ev.target.checked)
+        {
+            selectedTechs.push(ev.target.value)
+            
+        }
+        else{
+            selectedTechs=selectedTechs.filter(function(t){
+                if(t===ev.target.value)
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+
+            })
+        }
+
+           
+        console.log(selectedTechs)
+        }
+    </script>
+</body>
+</html>
